@@ -1,0 +1,105 @@
+.navbar {
+  background-color: var(--color-brown-deep);
+  height: var(--nav-height);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-nav);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding-x);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--color-white);
+  letter-spacing: -0.3px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.logo:hover { opacity: 0.85; }
+
+.logoAccent { color: var(--color-accent); }
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.link {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-warm-gray);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.link:hover { color: var(--color-white); }
+
+.ctaButton {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 9px 20px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  white-space: nowrap;
+}
+
+.ctaButton:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+.langToggle {
+  display: flex;
+  border: 1px solid rgba(196, 185, 173, 0.25);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.langBtn {
+  background: transparent;
+  color: var(--color-warm-gray);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  letter-spacing: 0.04em;
+}
+
+.langBtn:hover { color: var(--color-white); }
+
+.langBtnActive {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+@media (max-width: 640px) {
+  .links { display: none; }
+  .langToggle { display: none; }
+  .logo { font-size: 18px; }
+}

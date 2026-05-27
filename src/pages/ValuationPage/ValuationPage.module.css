@@ -1,0 +1,463 @@
+/* ValuationPage.module.css — Step 3 */
+
+.page {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ── Header (dark) ── */
+.header {
+  background-color: var(--color-brown-deep);
+  padding: var(--space-xl) var(--page-padding-x) 0;
+}
+
+.headerInner {
+  max-width: 720px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+  font-weight: 500;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: var(--color-white);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--color-warm-gray);
+  margin-bottom: var(--space-xl);
+}
+
+/* ── Step indicator bar ── */
+.stepIndicator {
+  display: flex;
+  border-top: 1px solid rgba(196, 185, 173, 0.1);
+  margin-top: var(--space-md);
+}
+
+.stepInd {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  font-size: 13px;
+  color: var(--color-warm-gray);
+  border-bottom: 3px solid transparent;
+  transition: all var(--transition-fast);
+  cursor: default;
+}
+
+.stepCircle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(196, 185, 173, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 500;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.stepDone .stepCircle {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.stepActive {
+  color: var(--color-white);
+  border-bottom-color: var(--color-accent);
+}
+
+.stepActive .stepCircle {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.stepLabel {
+  font-size: 13px;
+}
+
+/* ── Form body ── */
+.body {
+  background-color: var(--color-cream);
+  padding: var(--space-2xl) var(--page-padding-x);
+  min-height: 60vh;
+}
+
+.bodyInner {
+  max-width: 780px;
+}
+
+/* ── Shared form elements (used by all step files via composes) ── */
+.stepHeading {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--color-brown-dark);
+  margin-bottom: var(--space-xs);
+  font-weight: 500;
+}
+
+.stepSubheading {
+  font-size: 14px;
+  color: var(--color-brown-light);
+  margin-bottom: var(--space-xl);
+  line-height: 1.5;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.formGrid3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formField label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-brown-dark);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.formField input,
+.formField select {
+  background: var(--color-white);
+  border: 1px solid var(--color-sand);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  font-size: 14px;
+  color: var(--color-brown-dark);
+  transition: border-color var(--transition-fast);
+  outline: none;
+  width: 100%;
+}
+
+.formField input:focus,
+.formField select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(193, 127, 58, 0.12);
+}
+
+.formField input::placeholder {
+  color: var(--color-warm-gray);
+}
+
+.full {
+  grid-column: span 2;
+}
+
+/* ── Toggle chips (sun orientation, condition, etc.) ── */
+.toggleGroup {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-md);
+}
+
+.toggleGroupLabel {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-brown-dark);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.toggleOpt {
+  padding: 9px 18px;
+  border: 1px solid var(--color-sand);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--color-brown-light);
+  cursor: pointer;
+  background: var(--color-white);
+  font-family: var(--font-body);
+  transition: all var(--transition-fast);
+}
+
+.toggleOpt:hover {
+  border-color: var(--color-brown-light);
+  color: var(--color-brown-dark);
+}
+
+.toggleOptSelected {
+  border-color: var(--color-accent);
+  background: rgba(193, 127, 58, 0.08);
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+/* ── Photo upload ── */
+.uploadArea {
+  border: 2px dashed var(--color-warm-gray);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl) var(--space-xl);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  background: var(--color-white);
+}
+
+.uploadArea:hover,
+.uploadAreaDragging {
+  border-color: var(--color-accent);
+  background: rgba(193, 127, 58, 0.03);
+}
+
+.uploadIcon {
+  font-size: 36px;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.uploadTitle {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--color-brown-dark);
+  margin-bottom: 6px;
+}
+
+.uploadHint {
+  font-size: 13px;
+  color: var(--color-brown-light);
+}
+
+.photoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.photoThumb {
+  border-radius: var(--radius-md);
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+  background: var(--color-sand);
+  border: 1px solid var(--color-warm-gray);
+}
+
+.photoThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photoRemove {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(44, 31, 20, 0.7);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.aiRow {
+  background: var(--color-white);
+  border: 1px solid var(--color-sand);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  margin-top: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.aiBadge {
+  background: rgba(193, 127, 58, 0.1);
+  color: var(--color-accent);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.aiText {
+  font-size: 13px;
+  color: var(--color-brown-light);
+  flex: 1;
+  line-height: 1.5;
+}
+
+.aiScore {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--color-brown-dark);
+  white-space: nowrap;
+}
+
+.aiScoreSub {
+  font-size: 13px;
+  color: var(--color-brown-light);
+}
+
+/* ── Form navigation (Back / Continue buttons) ── */
+.formNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-sand);
+}
+
+.btnBack {
+  background: transparent;
+  color: var(--color-brown-light);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 12px 24px;
+  border: 1px solid var(--color-sand);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btnBack:hover {
+  border-color: var(--color-brown-light);
+  color: var(--color-brown-dark);
+}
+
+.btnNext {
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 32px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.btnNext:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+.btnSubmit {
+  background: var(--color-brown-dark);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 14px 40px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.btnSubmit:hover {
+  background: var(--color-brown-deep);
+  transform: translateY(-1px);
+}
+
+/* ── Loading overlay ── */
+.loadingOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 31, 20, 0.88);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: spin 0.85s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loadingText {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--color-white);
+}
+
+.loadingSub {
+  font-size: 13px;
+  color: var(--color-warm-gray);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .formGrid3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .stepLabel { display: none; }
+  .stepInd { padding: var(--space-md) var(--space-sm); }
+
+  .formGrid,
+  .formGrid3 {
+    grid-template-columns: 1fr;
+  }
+
+  .full { grid-column: span 1; }
+
+  .photoGrid { grid-template-columns: repeat(3, 1fr); }
+
+  .formNav { flex-direction: column-reverse; gap: var(--space-sm); }
+  .btnBack, .btnNext, .btnSubmit { width: 100%; justify-content: center; }
+}

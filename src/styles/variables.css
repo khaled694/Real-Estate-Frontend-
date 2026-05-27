@@ -1,0 +1,78 @@
+/*
+ * variables.css — PropValue AI Design Tokens
+ * Theme: Warm Earthy (confirmed 2026-05-19)
+ *
+ * RULE: Never hardcode hex values in component CSS files.
+ * Always use these variables. If you need a new token, add it here first.
+ *
+ * Imported in global.css which is imported in main.jsx.
+ */
+
+:root {
+  /* ── Backgrounds ── */
+  --color-cream:        #F5F0E8;
+  --color-sand:         #EDE4D8;
+  --color-white:        #FFFFFF;
+
+  /* ── Text & Borders ── */
+  --color-warm-gray:    #C4B9AD;
+  --color-brown-light:  #8B7355;
+  --color-brown-dark:   #4A3728;
+  --color-brown-deep:   #2C1F14;
+
+  /* ── Accent ── */
+  --color-accent:       #C17F3A;
+  --color-accent-hover: #A86B2A;
+
+  /* ── Semantic ── */
+  --color-success:      #5A7A4A;
+  --color-danger:       #8B3A3A;
+  --color-warning:      #C17F3A;
+
+  /* ── Typography ── */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-mono:    'DM Mono', 'Courier New', monospace;
+
+  /* ── Spacing ── */
+  --space-xs:   4px;
+  --space-sm:   8px;
+  --space-md:   16px;
+  --space-lg:   24px;
+  --space-xl:   40px;
+  --space-2xl:  64px;
+
+  /* ── Border radius ── */
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+  --radius-xl:  32px;
+
+  /* ── Shadows ── */
+  --shadow-card: 0 2px 12px rgba(44, 31, 20, 0.08);
+  --shadow-nav:  0 1px 0 rgba(44, 31, 20, 0.12);
+
+  /* ── Transitions ── */
+  --transition-fast:   0.15s ease;
+  --transition-normal: 0.25s ease;
+
+  /* ── Layout ── */
+  --max-width:      1200px;
+  --nav-height:     64px;
+  --page-padding-x: 80px;   /* desktop horizontal padding */
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  :root {
+    --page-padding-x: 40px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  :root {
+    --page-padding-x: 20px;
+    --space-2xl: 40px;
+  }
+}
